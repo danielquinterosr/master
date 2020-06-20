@@ -1,6 +1,3 @@
-# master
-Created with CodeSandbox
-
 ## Situación del Covid-19 en las cárceles de Chile
 
 Este repositorio busca sistematizar información epidemiológica respecto al avance de la pandemia Covid-19 en los recintos penitenciarios de Chile. Los datos se actualizan a partir de los reportes diarios que entrega Gendarmería de Chile en la página: https://www.gendarmeria.gob.cl/corona2020.html 
