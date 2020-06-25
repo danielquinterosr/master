@@ -10,7 +10,7 @@ Estos archivos contienen las tablas presentadas por el Subsecretario Sebastián 
 
 ## Observaciones
 
-**11-06-2020:** Gendarmería informa la realización de 14 PCR el 8 de junio y otros 26 PCR el 10 de junio. 
+**11-06-2020:** Gendarmería informa la realización de 14 PCR el 8 de junio y otros 26 PCR el 10 de junio a los internos de Pozo Almonte. 100% positividad y actualmente 53 contagiados (población penal: 65 personas).
 
 **18-06-2020:** En la Comisión de DDHH del Senado del jueves 18 de junio 2020, el Colegio Médico denunció que el 01 de mayo se dejaron de realizar tests en toda la Región Metropolitana
 
