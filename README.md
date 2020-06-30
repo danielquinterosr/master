@@ -1,12 +1,17 @@
 ## Situación del Covid-19 en las cárceles de Chile
 
-**covid.carcel** 
+**covid.carcel.csv** 
 
 Este repositorio busca sistematizar información epidemiológica respecto al avance de la pandemia Covid-19 en los recintos penitenciarios de Chile. Los datos se actualizan a partir de los reportes diarios que entrega Gendarmería de Chile en la página: https://www.gendarmeria.gob.cl/corona2020.html 
 
-**pcr.fx y pcr.ppl**
+**pcr.fx.csv y pcr.ppl.csv**
 
 Estos archivos contienen las tablas presentadas por el Subsecretario Sebastián Valenzuela en la Comisión de Seguridad Ciudadana el lunes 22 de junio de 2020. 
+
+**Covid19 Carcel.Rmd**
+
+Archivo RMarkdown con la sintaxis para generar gráfico de contagio y calcular el R_efectivo.
+
 
 ## Observaciones
 
