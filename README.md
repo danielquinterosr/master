@@ -6,7 +6,7 @@ Este repositorio busca sistematizar información epidemiológica respecto al ava
 
 **pcr.fx.csv y pcr.ppl.csv**
 
-Estos archivos contienen las tablas presentadas por el Subsecretario Sebastián Valenzuela en la Comisión de Seguridad Ciudadana el lunes 22 de junio de 2020. 
+Estos archivos contienen las tablas presentadas por el Subsecretario Sebastián Valenzuela en la Comisión de Seguridad Ciudadana el lunes 22 de junio de 2020, con información de test aplicados y casos positivos por región tanto para personas privadas de libertad (ppl) como para funcionarixs (fx). 
 
 **Covid19 Carcel.Rmd**
 
