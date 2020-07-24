@@ -1,7 +1,7 @@
 ---
 title: "Covid19 Carcel"
 author: "Daniel Quinteros"
-date: "30/6/2020"
+date: "24/07/2020"
 output: html_document
 ---
 
@@ -38,11 +38,11 @@ contagio.largo <- reshape2::melt(contagio, id.var='fecha')
 ```{r, echo=FALSE}
 graf.contagio <- ggplot(contagio.largo, aes(x=fecha, y=value, col=variable)) +
 geom_line(size=1.1, alpha=0.7, linetype=1) +
-geom_text_repel(data=subset(contagio.largo, fecha=="2020-04-15" | fecha=="2020-04-30" | fecha=="2020-05-15" | fecha=="2020-05-31" | fecha=="2020-06-15" | fecha=="2020-06-30"), aes(y=value,label=value),size=4, fontface="bold", position="identity",show_guide=FALSE) +
+geom_text_repel(data=subset(contagio.largo, fecha=="2020-04-15" | fecha=="2020-04-30" | fecha=="2020-05-15" | fecha=="2020-05-31" | fecha=="2020-06-15" | fecha=="2020-06-30"| fecha=="2020-07-15" | fecha=="2020-07-22"), aes(y=value,label=value),size=4, fontface="bold", position="identity",show.legend=FALSE) +
 xlab("") + ylab("") +
-scale_x_date(date_breaks = "1 week", date_labels = "%d-%m") +
+scale_x_date(date_breaks = "10 day", date_labels = "%d-%m") +
 theme_ipsum() +
-ggtitle("Contagio Covid-19 en Cárceles de Chile (30jun2020)") +
+ggtitle("Contagio Covid-19 en Cárceles de Chile (22jul2020)") +
 theme(legend.position="top", legend.title = element_blank(),legend.text = element_text(size=7))
 print(graf.contagio)
 ```
@@ -92,7 +92,7 @@ smooth_new_cases <- function(cases){
     mutate(new_cases_smooth = round(
       smoother::smth(new_cases, window = 7, tails = TRUE)
     )) %>%
-    select(date, cases, new_cases, new_cases_smooth)
+    dplyr::select(date, cases, new_cases, new_cases_smooth)
 }
 
 covid_cases <- subset(covid.carcel, select = c(contagio.ppl,fecha))
@@ -133,7 +133,7 @@ compute_likelihood <- function(cases){
       likelihood_r_t = map2(new_cases_smooth, lambda, dpois, log = TRUE)
     ) %>%
     slice(-1) %>%
-    select(-lambda) %>%
+    dplyr::select(-lambda) %>%
     unnest(c(likelihood_r_t, r_t))
 }
 
@@ -157,7 +157,7 @@ compute_posterior <- function(likelihood){
     # HACK: NaNs in the posterior create issues later on. So we remove them.
     mutate(posterior = ifelse(is.nan(posterior), 0, posterior)) %>%
     ungroup() %>%
-    select(-likelihood_r_t)
+    dplyr::select(-likelihood_r_t)
 }
 
 covid_cases %>%
@@ -175,7 +175,6 @@ plot_posteriors <- function(posteriors){
     geom_line(alpha = 0.2) +
     labs(
       title = expression(paste("Daily Posterior of R"[t], " by day")),
-      subtitle = unique(posteriors$state),
       x = '',
       y = ''
     ) +
@@ -203,7 +202,7 @@ estimate_rt <- function(posteriors){
       r_t_lo = map_dbl(r_t_simulated, ~ hdi(.x)[1]),
       r_t_hi = map_dbl(r_t_simulated, ~ hdi(.x)[2])
     ) %>%
-    select(-r_t_simulated)
+    dplyr::select(-r_t_simulated)
 }
 
 covid_cases %>%
